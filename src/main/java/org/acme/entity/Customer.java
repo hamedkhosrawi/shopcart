@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Objects;
 import java.util.Set;
 
 @Getter @Setter
@@ -35,5 +36,20 @@ public class Customer extends AbstractEntity{
     @OneToMany(mappedBy = "customer")
     private Set<Cart> carts;
 
+    @Column(name = "enabled", nullable = false)
+    private Boolean enabled;
+
+    @Override
+    public boolean equals(Object o){
+        if ( this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return Objects.equals(firstName, customer.firstName) &&
+                Objects.equals(lastName, customer.lastName) &&
+                Objects.equals(email, customer.email) &&
+                Objects.equals(telephone, customer.telephone) &&
+                Objects.equals(carts, customer.carts) &&
+                Objects.equals(enabled, customer.enabled);
+    }
 
 }
