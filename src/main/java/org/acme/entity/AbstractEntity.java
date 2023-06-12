@@ -10,6 +10,7 @@ import java.time.Instant;
 @Setter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
+
 public abstract class  AbstractEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,4 +20,5 @@ public abstract class  AbstractEntity {
 
     @Column(name = "last_modified_date")
     private Instant lastModifiedDate;
+
 }
