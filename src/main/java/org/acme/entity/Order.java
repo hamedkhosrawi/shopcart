@@ -10,12 +10,12 @@ import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
+import java.util.Objects;
 import java.util.Set;
 
 @Getter @Setter @NoArgsConstructor
 @ToString(callSuper = true)
-@Entity
-@Table(name = "order")
+@Entity @Table(name = "order")
 public class Order extends AbstractEntity{
 
     @NotNull
@@ -43,4 +43,33 @@ public class Order extends AbstractEntity{
 
     @OneToOne
     private Cart cart;
+
+    public Order(@NotNull BigDecimal price, @NotNull OrderStatus status, ZonedDateTime shipped,Payment payment,Address shipmentAddress,
+                 Set<OrderItem> orderItems, Cart cart){
+        this.price = price;
+        this.status = status;
+        this.shipped = shipped;
+        this.payment = payment;
+        this.shipmentAddress = shipmentAddress;
+        this.orderItems = orderItems;
+        this.cart = cart;
+    }
+    @Override
+    public boolean equals(Object o){
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return Objects.equals(price,order.price ) && status == order.status &&
+                Objects.equals(shipped , order.shipped) &&
+                Objects.equals(payment, order.payment) &&
+                Objects.equals(shipmentAddress, order.shipmentAddress) &&
+                Objects.equals(orderItems, order.orderItems) &&
+                Objects.equals(cart, order.cart);
+    }
+
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(price,status,shipped,payment,shipmentAddress,orderItems,cart);
+    }
 }
