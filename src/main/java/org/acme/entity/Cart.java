@@ -3,6 +3,8 @@ package org.acme.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+import org.acme.entity.enums.CartStatus;
+
 import java.util.Objects;
 
 @Getter

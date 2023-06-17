@@ -1,7 +1,7 @@
 package org.acme.repositories;
 
 import org.acme.entity.Cart;
-import org.acme.entity.CartStatus;
+import org.acme.entity.enums.CartStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

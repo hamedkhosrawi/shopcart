@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.acme.entity.enums.OrderStatus;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
