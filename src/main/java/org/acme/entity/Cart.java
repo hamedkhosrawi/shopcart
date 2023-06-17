@@ -1,5 +1,5 @@
 package org.acme.entity;
-
+import org.acme.entity.enums.*;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;

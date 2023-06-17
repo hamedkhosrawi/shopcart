@@ -18,8 +18,8 @@ import java.util.Set;
 @Table(name = "products")
 public class Product extends AbstractEntity {
 
-    @NotNull
 
+    @NotNull
     private String name;
     private String description;
     private BigDecimal price;
@@ -27,4 +27,5 @@ public class Product extends AbstractEntity {
     private Integer salesCounter;
 
     private Set<Review> reviews = new HashSet<>();
+
 }
