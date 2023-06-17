@@ -10,7 +10,7 @@ public class AuditingEntityListener {
     @PrePersist
     void preCreate(AbstractEntity auditable){
         Instant now = Instant.now();
-        auditable.setCreateDate(now);
+        auditable.setCreatedDate(now);
         auditable.setLastModifiedDate(now);
     }
     @PreUpdate

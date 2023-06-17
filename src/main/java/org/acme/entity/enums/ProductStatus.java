@@ -1,4 +1,4 @@
-package org.acme.entity;
+package org.acme.entity.enums;
 
 public enum ProductStatus {
     AVAILABLE, DISCONTINUED
