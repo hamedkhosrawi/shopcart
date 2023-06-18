@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Payment extends AbstractEntity{
 
     @Column(name = "shopcard_pyment_id")
-    private String paymentId;
+    private String shopcardPaymentId;
 
     @NotNull
     @Enumerated(EnumType.STRING)
@@ -27,8 +27,8 @@ public class Payment extends AbstractEntity{
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
 
-    public Payment(String paymentId, @NotNull PaymentStatus status,@NotNull BigDecimal amount ){
-        this.paymentId = paymentId;
+    public Payment(String shopcardPaymentId, @NotNull PaymentStatus status, @NotNull BigDecimal amount ){
+        this.shopcardPaymentId = shopcardPaymentId;
         this.status = status;
         this.amount = amount;
     }
@@ -38,12 +38,12 @@ public class Payment extends AbstractEntity{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Payment payment = (Payment) o;
-        return Objects.equals(payment, payment.paymentId) && status == payment.status &&
+        return Objects.equals(payment, payment.shopcardPaymentId) && status == payment.status &&
                 Objects.equals(amount, payment.amount);
     }
     @Override
     public int hashCode(){
-        return Objects.hash(paymentId,status,amount);
+        return Objects.hash(shopcardPaymentId,status,amount);
     }
 
 
