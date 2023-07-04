@@ -30,10 +30,11 @@ public class CartService {
     }
 
     public static CartDto mapToDto(Cart cart){
-        return new CartDto(
+        return null;
+        /*return new CartDto(
                 cart.getId(),
                 CustomerService.mapToDto(cart.getCustomer()),
                 cart.getStatus().name()
-        );
+        );*/
     }
 }
