@@ -29,12 +29,25 @@ public class CartService {
                 .collect(Collectors.toList());
     }
 
+    public List<CartDto> findAllActiveCarts(){
+        return this.cartRepository.findAll()
+                .stream()
+                .map(CartService::mapToDto)
+                .collect(Collectors.toList());
+    }
+
+    public Cart create(Long customerId){
+
+
+
+    }
+
     public static CartDto mapToDto(Cart cart){
-        return null;
-        /*return new CartDto(
+
+        return new CartDto(
                 cart.getId(),
                 CustomerService.mapToDto(cart.getCustomer()),
                 cart.getStatus().name()
-        );*/
+        );
     }
 }
