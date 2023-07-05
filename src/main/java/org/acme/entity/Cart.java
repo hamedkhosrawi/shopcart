@@ -20,7 +20,12 @@ public class Cart extends AbstractEntity {
     @NotNull
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private final CartStatus status;
+    private CartStatus status;
+
+    public Cart(Customer customer, @NotNull CartStatus status){
+        this.customer = customer;
+        this.status = status;
+    }
 
     @Override
     public boolean equals(Object o){
