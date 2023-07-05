@@ -28,7 +28,6 @@ public class Review extends AbstractEntity{
         this.description= description;
         this.rating = rating;
     }
-
     @Override
     public boolean equals(Object o){
         if (this == o) return true;
